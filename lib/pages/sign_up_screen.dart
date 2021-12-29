@@ -49,6 +49,13 @@ class _SignUpState extends State<SignUpPage> {
   }
 
   @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Sign Up')),
@@ -110,12 +117,20 @@ class _SignUpState extends State<SignUpPage> {
                         _isLoading ? null : _signUp();
                       }
                     },
+                    child: const Text('Sign up'),
+                  ),
+                  const SizedBox(height: 18),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamedAndRemoveUntil('/', (route) => false);
+                    },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
                         Colors.blueGrey.shade400,
                       ),
                     ),
-                    child: const Text('Sign up'),
+                    child: const Text('Return'),
                   ),
                 ]),
           )
