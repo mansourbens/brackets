@@ -37,7 +37,27 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Brackets'),
         actions: [
           IconButton(
-            onPressed: _signOut,
+            onPressed: () => showDialog<bool>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: const Text('Signing out'),
+                content: const Text('Are you sure you want to sign out ?'),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, false),
+                    child: const Text('Cancel',
+                        style: TextStyle(color: Colors.tealAccent)),
+                  ),
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, true),
+                    child: const Text('Yes',
+                        style: TextStyle(color: Colors.tealAccent)),
+                  ),
+                ],
+              ),
+            ).then((value) => {
+                  if (value == true) {_signOut()}
+                }),
             icon: const Icon(
               Icons.logout,
               color: Colors.white,
