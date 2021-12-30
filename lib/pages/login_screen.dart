@@ -54,6 +54,8 @@ class _LoginPageState extends AuthState<LoginPage> {
     } else {
       context.showSnackBar(message: 'Success');
       _emailController.clear();
+      _passwordController.clear();
+      Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false);
     }
 
     setState(() {

@@ -1,4 +1,4 @@
-import 'package:brackets/pages/account_screen.dart';
+import 'package:brackets/pages/home_screen.dart';
 import 'package:brackets/pages/login_screen.dart';
 import 'package:brackets/pages/sign_up_screen.dart';
 import 'package:brackets/pages/splash_screen.dart';
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/': (_) => const SplashPage(),
         '/login': (_) => const LoginPage(),
-        '/account': (_) => const AccountPage(),
+        '/home': (_) => const HomePage(),
         '/signup': (_) => const SignUpPage(),
       },
     );
