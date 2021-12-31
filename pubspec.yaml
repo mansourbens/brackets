@@ -79,6 +79,9 @@ flutter:
     - family: CustomIcons
       fonts:
         - asset: assets/MyFlutterApp.ttf
+    - family: Quicksand
+      fonts:
+        - asset: assets/Quicksand.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

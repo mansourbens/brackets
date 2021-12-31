@@ -94,7 +94,7 @@ buildTournamentCard(Tournament tournament) {
       padding: const EdgeInsets.all(16.0),
       child: Card(
         shadowColor: Colors.white,
-        elevation: 8.0,
+        elevation: 4.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -221,7 +221,6 @@ buildTournamentCard(Tournament tournament) {
                               alignment: Alignment.center,
                               child: Text('Edit',
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w300,
                                       fontSize: 10.0,
                                       color: Colors.teal.shade700)),
                             ),

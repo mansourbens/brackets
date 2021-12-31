@@ -1,4 +1,5 @@
 import 'package:brackets/utils/constants.dart';
+import 'package:brackets/utils/styles.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -147,26 +148,6 @@ class _SignUpState extends State<SignUpPage> {
           _isPasswordObscure = !_isPasswordObscure;
         });
       },
-    );
-  }
-
-  InputDecoration buildInputDecoration(
-      String labelText, IconButton? iconButton) {
-    return InputDecoration(
-      suffixIcon: iconButton ?? iconButton,
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.green.shade400),
-      ),
-      focusedErrorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.redAccent.shade100),
-      ),
-      focusColor: Colors.redAccent.shade100,
-      floatingLabelStyle: TextStyle(color: Colors.green.shade400),
-      labelText: labelText,
-      errorStyle: TextStyle(color: Colors.redAccent.shade100),
-      errorBorder: UnderlineInputBorder(
-        borderSide: BorderSide(color: Colors.redAccent.shade100),
-      ),
     );
   }
 

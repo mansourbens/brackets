@@ -1,5 +1,6 @@
 import 'package:brackets/components/auth/auth_state.dart';
 import 'package:brackets/utils/constants.dart';
+import 'package:brackets/utils/styles.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase/supabase.dart';
@@ -90,7 +91,7 @@ class _LoginPageState extends AuthState<LoginPage> {
           const SizedBox(height: 18),
           TextFormField(
             controller: _emailController,
-            decoration: const InputDecoration(labelText: 'Email'),
+            decoration: buildInputDecoration('Email', null),
           ),
           Visibility(
               visible: _isLoginWithPassword,
@@ -99,7 +100,7 @@ class _LoginPageState extends AuthState<LoginPage> {
                 TextFormField(
                   obscureText: true,
                   controller: _passwordController,
-                  decoration: const InputDecoration(labelText: 'Password'),
+                  decoration: buildInputDecoration('Password', null),
                 ),
               ])),
           const SizedBox(height: 18),
