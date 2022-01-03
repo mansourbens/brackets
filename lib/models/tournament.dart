@@ -28,7 +28,6 @@ class Tournament {
   }
 
   Map<String, dynamic> toJson() => {
-        'id': id,
         'user_id': userId,
         'name': name,
         'description': description,

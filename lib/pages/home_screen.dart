@@ -114,8 +114,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   _addTournament(Tournament tournament) async {
+    print(tournament.toJson());
     final response =
-        await supabase.from('tournament').upsert(tournament.toJson()).execute();
+        await supabase.from('tournament').insert(tournament.toJson()).execute();
     if (response.error != null) {
       print(response.error);
     }
@@ -242,7 +243,6 @@ class _NewTournamentDialogState extends State<NewTournamentDialog> {
           onPressed: () => Navigator.pop(
               context,
               Tournament(
-                  id: 3,
                   name: _nameController.text,
                   description: _descriptionController.text,
                   teamsNumber: _teamsNumber,
