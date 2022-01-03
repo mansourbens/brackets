@@ -21,7 +21,6 @@ class _SignUpState extends State<SignUpPage> {
     setState(() {
       _isLoading = true;
     });
-    print(_emailController.text);
     final response = await supabase.auth.signUp(
         _emailController.text, _passwordController.text,
         options: AuthOptions(
