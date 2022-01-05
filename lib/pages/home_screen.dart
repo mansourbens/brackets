@@ -1,11 +1,8 @@
-import 'package:brackets/components/forms/add_tournament.dart';
 import 'package:brackets/components/icons.dart';
 import 'package:brackets/components/views/tournament_view.dart';
-import 'package:brackets/models/tournament.dart';
 import 'package:brackets/utils/constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -69,23 +66,6 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: _views[_selectedIndex],
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => showDialog<Tournament>(
-          context: context,
-          builder: (BuildContext context) => const NewTournamentDialog(),
-        ).then((tournament) async {
-          if (tournament != null) {
-            PostgrestResponse response = await addTournament(tournament);
-            if (response.hasError) {
-              context.showErrorSnackBar(message: response.error!.message);
-            } else {
-              context.showSnackBar(message: 'Tournament added successfully');
-              fetchTournaments();
-            }
-          }
-        }),
-        child: Icon(Icons.edit, color: Colors.teal.shade800),
-      ),
       bottomNavigationBar: SizedBox(
         height: 76.0,
         child: BottomNavigationBar(
